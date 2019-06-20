@@ -1,4 +1,4 @@
-/* 安全性管理 
+/* 安全性管理 */
 GO
 --例1： 为用户student123创建一个SQL SERVER登录名，密码为123，默认数据库为student。
 EXEC sp_addlogin 'student123','123','student';
@@ -33,7 +33,6 @@ DENY DELETE ON Course TO [123]
 --例10 撤消用户123的CREATE TABLE 语句权限
 REVOKE CREATE TABLE TO [123]
 
-
 --例11 撤消用户123对表Course的DELETE权限
 REVOKE DELETE ON Course TO [123]
 
@@ -42,6 +41,6 @@ USE student
 CREATE ROLE role_123;
 GRANT ALL ON Student TO role_123;
 
-GRANT db_learning TO [123] WITH GRANT OPTION;--为什么出现语法错误*/
+GRANT db_learning TO [123] WITH GRANT OPTION;--为什么出现语法错误
 
 GRANT role_123 TO db_learning;
