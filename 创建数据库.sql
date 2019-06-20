@@ -1,5 +1,5 @@
-/** 创建数据库 
-CREATE DATABASE NewStudentDB
+/** 创建数据库 */
+CREATE DATABASE Student
 ON
 (
     NAME = 'NewStudentDB', --主数据文件逻辑名
@@ -16,10 +16,10 @@ LOG ON --如果不指明下面的日志文件，也会默认有，但是一些�
     MAXSIZE = 100, -- 最大大小
     FILEGROWTH = 20% -- 每次增长的比例
 )
-*/
 
-/** 修改数据库 
-ALTER DATABASE NewStudentDB
+
+/** 修改数据库 */
+ALTER DATABASE Student
 ADD FILE --给数据库再添加一个次数据库文件
 (
     NAME = NewStudentDB_2, -- 事务日志文件逻辑名
@@ -27,8 +27,8 @@ ADD FILE --给数据库再添加一个次数据库文件
     SIZE = 1MB,
     FILEGROWTH = 10%
 )
-*/
 
 
-/** 删除数据库 
-DROP DATABASE NewStudentDB;*/
+
+/** 删除数据库 */
+DROP DATABASE Student;
