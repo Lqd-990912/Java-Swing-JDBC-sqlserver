@@ -1,4 +1,4 @@
-/* 单表查询
+/* 单表查询 */
 --1.基本查询语句
 --例1：查询Student表的部分属性：SN、SName
 SELECT SNo,SName
@@ -25,7 +25,6 @@ SELECT *
 FROM Student
 WHERE Dept = '计算机学院';
 
-
 --例 6 查询所有姓“张”的并且是计算机学院的学生的 SN、SName。
 SELECT SNo,SName
 FROM Student
@@ -35,7 +34,6 @@ WHERE SName LIKE '张%' AND Dept = '计算机学院';
 SELECT SNo,SName
 FROM Student
 WHERE SName LIKE '张_' AND Dept = '计算机学院';
-
 
 --例 8 查询 SN 中前面 4 个字符为“480”，第 5 个字符为“7”或“9”。
 SELECT SNo,SName
@@ -54,13 +52,11 @@ FROM Scores
 WHERE CNo = 'C0001'
 ORDER BY Grade DESC; 
 
-
 --6.聚集函数
 --例 11：计算选修 C0001 课程的学生平均成绩。
 SELECT AVG(Grade) 'C0001的平均成绩'
 FROM Scores
 WHERE CNo = 'C0001';
-
 
 --7.分组查询
 --例 12：查询与各个课程号相对应的选课人数。
@@ -73,10 +69,8 @@ SELECT CNO,COUNT(*) '选课人数'
 FROM Scores
 GROUP BY CNo 
 HAVING COUNT(*) >= 2;
- */
 
-
-/* 多表查询 
+/* 多表查询 */
 --1.等值与非等值连接查询
 
 --例14 查询每个学生的SN、SName及其选修的CN、Grade。
@@ -121,10 +115,10 @@ WHERE Student.SNo = Scores.SNo AND Scores.CNo = 'C0001' AND Scores.Grade > 75;
 SELECT Student.SNo,SName,Course.CName,Scores.Grade
 FROM Student,Scores,Course
 WHERE Student.SNo = Scores.SNo AND Scores.CNo = Course.CNo;
-*/
 
 
-/* 嵌套查询 
+
+/* 嵌套查询 */
 --例20  查询与“张三”在同一个Dept的学生的SN和SName。 (用 IN )
 SELECT Sno,SName
 FROM Student
@@ -218,7 +212,7 @@ UNION
 SELECT *
 FROM Student
 WHERE Age <= 20;
-*/
+
 
 --例27 查询计算机学院的学生与Age小于21岁的学生记录的交集。
 SELECT *
